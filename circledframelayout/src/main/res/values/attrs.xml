@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircledFrameLayout">
+        <attr name="cfl_background_border_width" format="dimension"/>
+        <attr name="cfl_foreground_border_width" format="dimension"/>
+        <attr name="cfl_background_border_color" format="color"/>
+        <attr name="cfl_foreground_border_color" format="color"/>
+        <attr name="cfl_inner_fill_color" format="color"/>
+        <attr name="cfl_progress_animation_duration" format="integer"/>
+        <attr name="cfl_scale_animation_duration" format="integer"/>
+        <attr name="cfl_scale_factor" format="float"/>
+        <attr name="cfl_fake_scale_factor" format="float"/>
+        <attr name="cfl_user_interaction_enabled" format="boolean"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,3 @@
+include ':circledframelayout'
+include ':app'
+rootProject.name = "CircledFrameLayoutSample"
