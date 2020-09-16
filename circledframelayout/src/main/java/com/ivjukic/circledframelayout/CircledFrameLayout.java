@@ -77,14 +77,14 @@ public class CircledFrameLayout extends FrameLayout {
 
 
     //Properties
-    private int backgroundStrokeColor = Color.WHITE;
+    protected int backgroundStrokeColor = Color.WHITE;
     private float backgroundStrokeWidth = Util.pxFromDp(getContext(), DEFAULT_STROKE_WIDTH);
 
-    private int foregroundStrokeColor = Color.BLUE;
+    protected int foregroundStrokeColor = Color.BLUE;
     private float foregroundStrokeWidth = Util.pxFromDp(getContext(), DEFAULT_STROKE_WIDTH);
 
     private float initialForegroundStrokeWidth = Util.pxFromDp(getContext(), DEFAULT_STROKE_WIDTH);
-    private int innerFillColor = DEFAULT_INNER_FILL_COLOR;
+    protected int innerFillColor = DEFAULT_INNER_FILL_COLOR;
     private float progress = 0;
     private boolean isUserInteractionEnabled = true;
     private boolean justScale = false;
@@ -318,7 +318,7 @@ public class CircledFrameLayout extends FrameLayout {
         if ((progressAnimator != null && progressAnimator.isRunning()) || (scaleAnimatorSet != null && scaleAnimatorSet.isRunning()))
             return;
 
-        float finalProgress = 0;
+        float finalProgress;
         if (this.progress == MIN_PROGRESS) {
             finalProgress = MAX_PROGRESS;
         } else {
@@ -520,6 +520,12 @@ public class CircledFrameLayout extends FrameLayout {
     public void setBackgroundStrokeColor(int backgroundStrokeColor) {
         this.backgroundStrokeColor = backgroundStrokeColor;
         backgroundStrokePaint.setColor(backgroundStrokeColor);
+        invalidate();
+    }
+
+    public void setInnerFillColor(int innerFillColor) {
+        this.innerFillColor = innerFillColor;
+        innerFillPaint.setColor(this.innerFillColor);
         invalidate();
     }
 
